@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./AskQue.css";
 import { useAskContext } from "../../context/AskContext";
-import { RTE, Input, Button, TextArea, HorizontalLine} from "../";
+import { RTE, Input, Button, TextArea, HorizontalLine } from "../";
 import conf from "../../conf/conf";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -141,7 +141,7 @@ const AskQue = ({ post }) => {
             pollQuestion,
             pollOptions
           }, categoryValue);
-    
+
           dispatch(getInitialPost({ initialPosts: [dbPost], initialPostsFlag: true }))
           setNotificationPopMsgNature((prev) => true)
           setnotificationPopMsg((prev) => 'Post Updated')
@@ -161,7 +161,7 @@ const AskQue = ({ post }) => {
             pollQuestion,
             pollOptions
           }, categoryValue);
-    
+
           dispatch(getInitialPost({ initialPosts: [dbPost], initialPostsFlag: true }))
           setNotificationPopMsgNature((prev) => true)
           setnotificationPopMsg((prev) => 'Post Updated')
@@ -179,9 +179,9 @@ const AskQue = ({ post }) => {
           const ImgArrUnsplash = UnsplashRes.results
 
           const randomIndex = Math.floor(Math.random() * 10);
-       
+
           const ImgURL = ImgArrUnsplash[randomIndex].urls.full
-        
+
           const dbPost = await appwriteService.updatePost(post?.$id, {
             ...data,
             queImage: ImgURL,
@@ -189,12 +189,12 @@ const AskQue = ({ post }) => {
             pollQuestion,
             pollOptions,
           }, categoryValue);
-        
+
           dispatch(getInitialPost({ initialPosts: [dbPost], initialPostsFlag: true }))
           setNotificationPopMsgNature((prev) => true)
           setnotificationPopMsg((prev) => 'Post Updated')
         } catch (error) {
-        
+
           const dbPost = await appwriteService.updatePost(post.$id, {
             ...data,
             userId: userData.$id,
@@ -321,7 +321,7 @@ const AskQue = ({ post }) => {
       }
       const pollOptionsArray = post.pollOptions.map((option) => JSON.parse(option))
       setTotalPollOptions((prev) => pollOptionsArray)
-      
+
       if (post.queImageID) {
         appwriteService.getThumbnailPreview(post.queImageID)
           .then((res) => {

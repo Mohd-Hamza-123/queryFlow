@@ -140,6 +140,7 @@ const ViewPost = () => {
       setprofileImgURL(postProfilesPic[ProfileURLIndex]?.profilePic)
     }
   }, [post])
+  
   useEffect(() => {
 
     if (post) {
@@ -185,7 +186,7 @@ const ViewPost = () => {
       let postObject = initialPost.find(obj => obj.$id === slug)
       setPost((prev) => postObject)
     }
-  }, [post]);
+  }, [post]);+
   // UseEffect For bookMark
   useEffect(() => {
 
@@ -206,7 +207,6 @@ const ViewPost = () => {
       }
     }
   }, [myUserProfile])
-
   // Update Post in RealTime
   useEffect(() => {
     const realtime = client.subscribe(`databases.${conf.appwriteDatabaseId}.collections.${conf.appwriteCollectionId}.documents.${slug}`, (response) => {

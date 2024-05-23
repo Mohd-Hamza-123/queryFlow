@@ -257,6 +257,8 @@ body.darkMode #ViewPost-Title {
 }
 
 #ViewPost-parse {
+
+    word-break: break-all;
     margin-top: 40px;
     font-family: 'Poppins', sans-serif;
 }

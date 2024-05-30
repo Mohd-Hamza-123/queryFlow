@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useEffect } from "react"
 import { useState } from "react"
-import { PostCard, UpperNavigationBar, LowerNavigationBar, HorizontalLine, HomeRight, SecondLoader, Button, SideBar } from "../components/index";
+import { PostCard, UpperNavigationBar, LowerNavigationBar, HorizontalLine, HomeRight, SecondLoader, Button } from "../components/index";
 import { useSelector, useDispatch } from "react-redux";
 import "./Home.css";
 import appwriteService from "../appwrite/config";
@@ -13,6 +13,7 @@ const Home = () => {
   
   const dispatch = useDispatch()
   const initialPost = useSelector((state) => state.postsSlice?.initialPosts)
+
 
   const {
     increaseViews,

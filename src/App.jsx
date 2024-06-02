@@ -148,14 +148,13 @@ function App() {
     if (userId && secret) {
       authService.verifyWithUserId_secret(userId, secret)
         .then((res) => {
-          console.log(res);
+     
           if (res) {
             setNotificationPopMsgNature((prev) => true);
             setnotificationPopMsg((prev) => "You Email is Verified");
           }
         })
         .catch((err) => {
-          console.error(err)
         })
     }
   }
@@ -201,7 +200,7 @@ function App() {
   const [isAppInstalled, setisAppInstalled] = useState(true);
   const onInstallApp = async () => {
     if (appInstallPrompt) {
-      console.log(appInstallPrompt)
+   
       appInstallPrompt.prompt()
       appInstallPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {

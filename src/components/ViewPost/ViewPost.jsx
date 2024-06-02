@@ -353,7 +353,7 @@ const ViewPost = () => {
   }
 
   const [pauseLikeDisLike, setpauseLikeDisLike] = useState(false)
-  // console.log(pauseLikeDisLike)
+  
   const like_dislike_BookMark = async (flag) => {
 
     if (pauseLikeDisLike === true) return
